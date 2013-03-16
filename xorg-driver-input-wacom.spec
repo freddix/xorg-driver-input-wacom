@@ -1,18 +1,18 @@
 Summary:	X.org Wacom input driver
 Name:		xorg-driver-input-wacom
-Version:	0.18.0
+Version:	0.20.0
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://downloads.sourceforge.net/linuxwacom/xf86-input-wacom-%{version}.tar.bz2
-# Source0-md5:	cca2c9ed7a5d3b09689bfc2c204726fb
-URL:		http://xorg.freedesktop.org/
+# Source0-md5:	a726649cb05c98cb1b18a3b7a4f079ed
+URL:		http://sourceforge.net/apps/mediawiki/linuxwacom/index.php?title=Main_Page
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	pkg-config
 BuildRequires:	xorg-libXrandr-devel
-BuildRequires:	xorg-proto >= 7.6
+BuildRequires:	xorg-proto >= 7.7-3
 BuildRequires:	xorg-util-macros
 BuildRequires:	xorg-xserver-server-devel
 Requires:	xorg-xserver-server
@@ -48,7 +48,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/xorg/modules/*/*.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/xorg/modules/*/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
